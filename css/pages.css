@@ -6,12 +6,12 @@
   position:sticky;top:0;z-index:15;
   display:flex;align-items:center;gap:14px;
   padding:calc(var(--safe-t) + 13px) 22px 13px;
-  background:rgba(246,247,250,.9);backdrop-filter:blur(14px);
+  background:rgba(10,12,16,.88);backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line-soft);
 }
 .back-btn{
   width:34px;height:34px;flex-shrink:0;border-radius:50%;
-  border:1px solid var(--line);color:var(--slate-800);font-size:15px;
+  border:1px solid var(--line);color:var(--ink);font-size:15px;
   display:flex;align-items:center;justify-content:center;transition:border-color .2s;
 }
 .back-btn:active{border-color:var(--gold-500)}

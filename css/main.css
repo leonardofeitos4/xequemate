@@ -3,35 +3,37 @@
 ═══════════════════════════════════════════ */
 
 :root{
-  /* Paleta oficial (grafite / dourado) */
-  --slate-900:#1B1F27;
-  --slate-800:#262C38;
-  --slate-700:#343C4B;
-  --slate-600:#454E60;
-  --slate-500:#5A6478;   /* primária */
-  --slate-400:#7B849A;
-  --slate-300:#A2AABD;
-  --slate-100:#E4E7EE;
-  --slate-050:#F6F7FA;   /* fundo */
+  /* Paleta oficial (grafite / dourado) — modo escuro */
+  --slate-950:#0A0C10;   /* fundo */
+  --slate-900:#10131A;
+  --slate-800:#171B23;
+  --slate-700:#212734;
+  --slate-600:#2E3543;
+  --slate-500:#3E4657;   /* primária */
+  --slate-400:#6C7589;
+  --slate-300:#98A1B4;
+  --slate-100:#D5DAE4;
+  --slate-050:#F0F2F7;
 
-  --gold-700:#8A6A1E;
-  --gold-600:#A17E29;
-  --gold-500:#B4913A;    /* acento */
-  --gold-400:#C7A857;
-  --gold-100:#F3EAD2;
+  --gold-700:#E3C888;
+  --gold-600:#D9BB6B;
+  --gold-500:#C9A24D;    /* acento */
+  --gold-400:#DCC07E;
+  --gold-100:rgba(201,162,77,.14);
 
-  --ink:#1B1F27;
-  --ink-2:#4A5262;
-  --dim:#8B93A5;
+  --ink:#ECEFF5;
+  --ink-2:#AFB7C6;
+  --dim:#7A8397;
 
-  --card:#FFFFFF;
-  --card-2:#F1F2F6;
-  --line:rgba(27,31,39,.12);
-  --line-soft:rgba(27,31,39,.07);
+  --card:rgba(255,255,255,.045);
+  --card-2:rgba(255,255,255,.07);
+  --line:rgba(255,255,255,.10);
+  --line-soft:rgba(255,255,255,.06);
+  --line-strong:rgba(255,255,255,.18);
 
-  --shadow-sm:0 2px 10px -4px rgba(27,31,39,.16);
-  --shadow-md:0 14px 34px -18px rgba(27,31,39,.30);
-  --shadow-lg:0 26px 60px -28px rgba(27,31,39,.40);
+  --shadow-sm:0 2px 10px -4px rgba(0,0,0,.55);
+  --shadow-md:0 14px 34px -18px rgba(0,0,0,.85);
+  --shadow-lg:0 26px 60px -28px rgba(0,0,0,.95);
 
   --r-sm:10px;--r-md:16px;--r-lg:22px;--r-xl:28px;
 
@@ -44,7 +46,7 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html,body{height:100%;overflow:hidden;background:var(--slate-050)}
+html,body{height:100%;overflow:hidden;background:var(--slate-950)}
 body{
   font-family:var(--ff-sans);font-weight:400;color:var(--ink);
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
@@ -52,14 +54,14 @@ body{
 img{display:block;max-width:100%}
 button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 a{color:var(--gold-600);text-decoration:none}
-::selection{background:var(--gold-100);color:var(--slate-900)}
+::selection{background:var(--gold-500);color:var(--slate-950)}
 
 /* ── Ambiente: brumas suaves no fundo ── */
 #amb{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-#amb i{position:absolute;display:block;border-radius:50%;filter:blur(60px);opacity:.4}
-#amb i:nth-child(1){width:340px;height:340px;top:-90px;left:-110px;background:var(--gold-100);animation:drift 22s ease-in-out infinite}
-#amb i:nth-child(2){width:280px;height:280px;top:38%;right:-120px;background:var(--slate-100);animation:drift 28s ease-in-out infinite reverse}
-#amb i:nth-child(3){width:320px;height:320px;bottom:-120px;left:-80px;background:var(--slate-100);animation:drift 26s ease-in-out infinite}
+#amb i{position:absolute;display:block;border-radius:50%;filter:blur(70px);opacity:.5}
+#amb i:nth-child(1){width:340px;height:340px;top:-90px;left:-110px;background:rgba(201,162,77,.20);animation:drift 22s ease-in-out infinite}
+#amb i:nth-child(2){width:280px;height:280px;top:38%;right:-120px;background:rgba(120,134,160,.16);animation:drift 28s ease-in-out infinite reverse}
+#amb i:nth-child(3){width:320px;height:320px;bottom:-120px;left:-80px;background:rgba(120,134,160,.14);animation:drift 26s ease-in-out infinite}
 
 /* ══════════════════════════════
    SISTEMA DE PÁGINAS (SPA)
@@ -67,7 +69,7 @@ a{color:var(--gold-600);text-decoration:none}
 .pg{
   position:fixed;inset:0;z-index:10;overflow-y:auto;overflow-x:hidden;
   -webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;
-  background:var(--slate-050);
+  background:var(--slate-950);
   transition:transform .4s cubic-bezier(.4,0,.2,1),opacity .4s;will-change:transform;
 }
 #home{z-index:5;transform:none;background:transparent}
@@ -93,29 +95,29 @@ a{color:var(--gold-600);text-decoration:none}
 
 .tag{
   border:1px solid var(--line);border-radius:999px;padding:7px 14px;
-  font-size:11.5px;letter-spacing:.06em;color:var(--slate-700);background:rgba(255,255,255,.6);
+  font-size:11.5px;letter-spacing:.06em;color:var(--slate-100);background:rgba(255,255,255,.05);
 }
 
 .cta-btn{
   display:flex;align-items:center;justify-content:space-between;gap:14px;
   width:100%;padding:17px 22px;border-radius:var(--r-lg);
-  background:linear-gradient(135deg,var(--slate-800),var(--slate-900));
-  color:#F6F7FA;font-size:15.5px;font-weight:500;letter-spacing:.01em;
+  background:linear-gradient(135deg,var(--slate-050),var(--slate-100));
+  color:var(--slate-950);font-size:15.5px;font-weight:500;letter-spacing:.01em;
   box-shadow:var(--shadow-md);transition:transform .2s,box-shadow .2s;
 }
 .cta-btn:active{transform:scale(.985)}
-.cta-btn .cta-sub{display:block;font-size:12px;color:rgba(246,247,250,.72);margin-top:3px;font-weight:400}
-.cta-btn .cta-arr{font-size:17px;color:var(--gold-400);flex-shrink:0}
+.cta-btn .cta-sub{display:block;font-size:12px;color:rgba(10,12,16,.62);margin-top:3px;font-weight:400}
+.cta-btn .cta-arr{font-size:17px;color:#8A6A1E;flex-shrink:0}
 
 .cta-ghost{
   display:flex;align-items:center;justify-content:center;
   width:100%;padding:15px 22px;border-radius:var(--r-lg);
-  border:1px solid var(--slate-300);color:var(--slate-700);
-  font-size:14.5px;font-weight:500;background:rgba(255,255,255,.6);transition:border-color .2s,background .2s;
+  border:1px solid var(--line-strong);color:var(--slate-100);
+  font-size:14.5px;font-weight:500;background:rgba(255,255,255,.045);transition:border-color .2s,background .2s;
 }
-.cta-ghost:active{background:var(--slate-100)}
+.cta-ghost:active{background:rgba(255,255,255,.09)}
 
-.ripple{position:absolute;border-radius:50%;background:rgba(90,100,120,.18);transform:scale(0);animation:rip .5s ease-out;pointer-events:none}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.13);transform:scale(0);animation:rip .5s ease-out;pointer-events:none}
 
 /* ── Animações ── */
 @keyframes fadeU{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
