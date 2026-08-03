@@ -1,0 +1,25 @@
+/* ═══════════════════════════════════════════
+   SUBPÁGINAS — cabeçalho e corpo padrão
+═══════════════════════════════════════════ */
+
+.sp-head{
+  position:sticky;top:0;z-index:15;
+  display:flex;align-items:center;gap:14px;
+  padding:calc(var(--safe-t) + 13px) 22px 13px;
+  background:rgba(246,247,250,.9);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-soft);
+}
+.back-btn{
+  width:34px;height:34px;flex-shrink:0;border-radius:50%;
+  border:1px solid var(--line);color:var(--slate-800);font-size:15px;
+  display:flex;align-items:center;justify-content:center;transition:border-color .2s;
+}
+.back-btn:active{border-color:var(--gold-500)}
+.sp-title{font-family:var(--ff-display);font-size:21px;font-weight:600;color:var(--ink);flex:1}
+
+.sp-body{
+  max-width:468px;margin:0 auto;
+  padding:24px 22px calc(var(--safe-b) + 48px);
+  display:flex;flex-direction:column;gap:20px;
+  animation:fadeU .4s ease both;
+}

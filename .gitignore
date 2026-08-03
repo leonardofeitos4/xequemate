@@ -1,0 +1,31 @@
+# Dependências
+node_modules/
+package-lock.json
+yarn.lock
+
+# Variáveis de ambiente / segredos
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build / deploy
+dist/
+build/
+.vercel/
+.cache/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+*.swp
+*.swo
+.idea/
