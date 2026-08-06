@@ -134,7 +134,20 @@ function bindRipple() {
 }
 
 /* ══════════════════════════════
-   5. BOOT
+   5. FOLDER EM TELA CHEIA
+══════════════════════════════ */
+function abrirFolder() {
+  document.getElementById('lb').classList.add('open');
+  document.getElementById('home-fabs').classList.add('hide');
+}
+function fecharFolder() {
+  document.getElementById('lb').classList.remove('open');
+  document.getElementById('home-fabs').classList.remove('hide');
+}
+addEventListener('keydown', e => { if (e.key === 'Escape') fecharFolder(); });
+
+/* ══════════════════════════════
+   6. BOOT
 ══════════════════════════════ */
 hydrate();
 renderServicos();

@@ -117,9 +117,27 @@ a{color:var(--gold-600);text-decoration:none}
 }
 .cta-ghost:active{background:rgba(255,255,255,.09)}
 
+/* ── Lightbox: imagem em tela cheia ── */
+.lb{
+  position:fixed;inset:0;z-index:60;display:none;cursor:zoom-out;
+  align-items:center;justify-content:center;
+  padding:calc(var(--safe-t) + 56px) 16px calc(var(--safe-b) + 20px);
+  background:rgba(4,5,7,.95);backdrop-filter:blur(8px);
+}
+.lb.open{display:flex;animation:fade .25s ease both}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:var(--r-sm)}
+.lb-x{
+  position:absolute;top:calc(var(--safe-t) + 14px);right:16px;
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid var(--line);background:rgba(255,255,255,.06);
+  color:var(--ink);font-size:21px;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+}
+
 .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.13);transform:scale(0);animation:rip .5s ease-out;pointer-events:none}
 
 /* ── Animações ── */
+@keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes fadeU{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @keyframes fadeD{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 @keyframes rip{to{transform:scale(4);opacity:0}}

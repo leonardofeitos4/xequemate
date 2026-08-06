@@ -10,22 +10,30 @@ const servicos = [
     tag:   'Consultoria empresarial',
     title: 'Consultoria empresarial',
     desc:  'NR-01, diagnóstico organizacional, mapeamento e implantação de processos de melhoria contínuos em todas as áreas organizacionais.',
-    botao: 'Solicitar orçamento',
-    wa:    'Olá! Gostaria de solicitar um orçamento de consultoria empresarial/NR-01.',
+    botoes: [
+      { txt: 'Solicitar orçamento',
+        wa:  'Olá! Gostaria de solicitar um orçamento de consultoria empresarial/NR-01.' },
+    ],
   },
   {
     tag:   'Treinamento e desenvolvimento',
     title: 'Treinamento e desenvolvimento',
     desc:  'Treinamento e desenvolvimento de lideranças e equipes de alta performance.',
-    botao: 'Solicitar orçamento',
-    wa:    'Olá! Gostaria de solicitar um orçamento de treinamento e desenvolvimento.',
+    botoes: [
+      { txt: 'Solicitar orçamento',
+        wa:  'Olá! Gostaria de solicitar um orçamento de treinamento e desenvolvimento.' },
+    ],
   },
   {
     tag:   'Recrutamento & Seleção',
     title: 'Recrutamento & Seleção',
     desc:  'Atração, captação e manutenção de talentos: CLT, estagiários e jovem aprendiz.',
-    botao: 'Enviar currículo',
-    wa:    'Olá! Gostaria de enviar meu currículo para a Xeque-mate.',
+    botoes: [
+      { txt: 'Enviar currículo',
+        wa:  'Olá! Gostaria de enviar meu currículo para a Xeque-mate.' },
+      { txt: 'Solicitar orçamento',
+        wa:  'Olá! Gostaria de solicitar um orçamento de recrutamento & seleção.' },
+    ],
   },
 ];
 
@@ -41,6 +49,9 @@ function renderServicos() {
         </div>
       </div>
       <div class="svc-desc">${s.desc}</div>
-      <a class="svc-btn" href="${waLink(s.wa)}" target="_blank" rel="noopener">${s.botao} →</a>
+      <div class="svc-acoes">
+        ${s.botoes.map(b => `
+        <a class="svc-btn" href="${waLink(b.wa)}" target="_blank" rel="noopener">${b.txt} →</a>`).join('')}
+      </div>
     </div>`).join('');
 }
