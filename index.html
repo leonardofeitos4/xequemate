@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/pages.css">
   <link rel="stylesheet" href="css/chat.css">
+  <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
 
@@ -150,10 +151,24 @@
 </div>
 
 
+<!-- ════════════════════════════════════════
+     FORMULÁRIOS — orçamento e currículo
+════════════════════════════════════════ -->
+<div class="pg subpg" id="page-form">
+  <div class="sp-head">
+    <button class="back-btn" onclick="back()">←</button>
+    <div class="sp-title" id="form-titulo">Solicitar orçamento</div>
+  </div>
+  <div class="sp-body" id="form-body"></div>
+</div>
+
+
 <!-- Folder em tela cheia -->
 <div class="lb" id="lb" onclick="fecharFolder()">
   <button class="lb-x" aria-label="Fechar">×</button>
   <img src="assets/img/folder.jpg" alt="Folder da Xeque-mate Consultoria">
+  <a class="lb-full" href="assets/img/folder.jpg" target="_blank" rel="noopener"
+     onclick="event.stopPropagation()">Abrir em tamanho real ↗</a>
 </div>
 
 
@@ -162,6 +177,8 @@
 ════════════════════════════════════════ -->
 <script src="data/site.js"></script>
 <script src="data/servicos.js"></script>
+<script src="data/formularios.js"></script>
+<script src="js/form.js"></script>
 <script src="chatbot/config.js"></script>
 <script src="chatbot/flows.js"></script>
 <script src="chatbot/engine.js"></script>

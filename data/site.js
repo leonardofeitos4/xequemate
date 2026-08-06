@@ -12,7 +12,7 @@ const SITE = {
   curto:     'Xeque-mate',
   area:      'Consultoria empresarial · RH · Treinamentos · NR-01',
 
-  whatsapp:  '5584999836270',        // (84) 99983-6270 — confirmar se é WhatsApp
+  whatsapp:  '5584999836270',        // (84) 99983-6270 — confirmado como WhatsApp
   instagram: 'xequemate.consultoria',
   email:     'xmdesenvolve@gmail.com',
 

@@ -52,18 +52,28 @@ function hydrate() {
 ══════════════════════════════ */
 const ROTAS = {
   'page-chat': 'duvidas',
+  'page-form': 'formulario',   // aceita parâmetro: #formulario/consultoria
 };
 const POR_SLUG = {};
 Object.entries(ROTAS).forEach(([id, slug]) => { POR_SLUG[slug] = id; });
 
 let paginaAtual = null;
+let paramAtual  = null;
 
-function go(id) { location.hash = ROTAS[id] || ''; }
+function go(id, param) {
+  const slug = ROTAS[id];
+  location.hash = slug ? slug + (param ? '/' + param : '') : '';
+}
 function back() { history.back(); }
 
 function sincronizar() {
-  const id = POR_SLUG[location.hash.slice(1)] || null;
-  if (id === paginaAtual) return;
+  const [slug, param = null] = decodeURIComponent(location.hash.slice(1)).split('/');
+  let id = POR_SLUG[slug] || null;
+
+  /* link de formulário quebrado ou inexistente cai na home */
+  if (id === 'page-form' && !FORMULARIOS[param]) id = null;
+  if (id === paginaAtual && param === paramAtual) return;
+  paramAtual = param;
 
   if (paginaAtual) document.getElementById(paginaAtual).classList.remove('active');
   paginaAtual = id;
@@ -84,6 +94,7 @@ function sincronizar() {
   fabs.style.cssText = 'opacity:0;pointer-events:none';
 
   if (id === 'page-chat' && !aiStarted) { aiStarted = true; startChat(); }
+  if (id === 'page-form') renderFormulario(param);
 }
 
 addEventListener('hashchange', sincronizar);

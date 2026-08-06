@@ -1,0 +1,58 @@
+/* ═══════════════════════════════════════════
+   FORMULÁRIOS — abas de orçamento e currículo
+═══════════════════════════════════════════ */
+
+.form-topo{display:flex;flex-direction:column;gap:6px}
+.form-servico{
+  font-family:var(--ff-mono);font-size:9px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--gold-600);
+}
+.form-intro{font-size:14px;line-height:1.65;color:var(--ink-2)}
+
+.form-campos{display:flex;flex-direction:column;gap:15px}
+.form-campo{display:flex;flex-direction:column;gap:7px}
+.form-label{font-size:13px;font-weight:500;color:var(--ink)}
+.form-req{color:var(--gold-500);margin-left:3px}
+
+.form-campo input,
+.form-campo select,
+.form-campo textarea{
+  width:100%;font:inherit;font-size:16px;   /* abaixo de 16px o iOS dá zoom ao focar */
+  color:var(--ink);background:rgba(255,255,255,.05);
+  border:1px solid var(--line);border-radius:var(--r-sm);
+  padding:13px 14px;transition:border-color .2s,background .2s;
+  -webkit-appearance:none;appearance:none;
+}
+.form-campo textarea{resize:vertical;min-height:104px;line-height:1.6}
+.form-campo select{
+  background-image:linear-gradient(45deg,transparent 50%,var(--gold-500) 50%),
+                   linear-gradient(135deg,var(--gold-500) 50%,transparent 50%);
+  background-position:calc(100% - 19px) 21px,calc(100% - 14px) 21px;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat;
+  padding-right:38px;
+}
+.form-campo select option{background:var(--slate-800);color:var(--ink)}
+.form-campo ::placeholder{color:var(--slate-400)}
+.form-campo input:focus,
+.form-campo select:focus,
+.form-campo textarea:focus{
+  outline:none;border-color:var(--gold-500);background:rgba(255,255,255,.08);
+}
+.form-campo .erro{border-color:#E4695F;background:rgba(228,105,95,.08)}
+
+.form-enviar{margin-top:6px}
+.form-nota{font-size:11.5px;line-height:1.6;color:var(--dim);text-align:center}
+
+/* ── Confirmação ── */
+.form-ok{display:flex;flex-direction:column;gap:14px;align-items:stretch;text-align:center}
+.form-ok-ico{
+  width:48px;height:48px;margin:6px auto 0;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;color:var(--gold-400);
+  border:1px solid var(--gold-500);background:var(--gold-100);
+}
+.form-ok-tit{font-family:var(--ff-display);font-size:21px;font-weight:600;color:var(--ink)}
+.form-ok-txt{font-size:14px;line-height:1.7;color:var(--ink-2);margin-bottom:4px}
+.form-ok-txt strong{color:var(--ink);font-weight:500}
+.form-ok .cta-ghost{justify-content:center}
+.form-voltar{font-size:13px;color:var(--dim);padding:8px}
