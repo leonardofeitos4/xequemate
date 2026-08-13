@@ -30,8 +30,7 @@
   box-shadow:var(--shadow-md);
   font-family:var(--ff-display);font-size:34px;font-weight:600;color:var(--gold-400);
 }
-/* A logo é preta sobre branco — invertida fica branca sobre o fundo escuro */
-.avatar-inner img{width:60%;height:auto;object-fit:contain;filter:invert(1)}
+.avatar-inner img{width:60%;height:auto;object-fit:contain}
 .cname{font-family:var(--ff-display);font-size:32px;line-height:1.1;font-weight:600;color:var(--ink)}
 .ctag{
   font-family:var(--ff-mono);font-size:9px;letter-spacing:.24em;
