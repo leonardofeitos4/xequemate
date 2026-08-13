@@ -65,16 +65,14 @@ const FORMULARIOS = {
   'curriculo': {
     titulo: 'Enviar currículo',
     servico: 'Recrutamento & Seleção',
-    intro: 'Preencha os dados e anexe o currículo no e-mail que vai abrir.',
+    intro: 'Preencha os dados, anexe o currículo e pronto — enviamos direto pra equipe.',
     envio: 'email',
     campos: [
-      { id: 'nome',     label: 'Seu nome', tipo: 'text',  req: true,  ph: 'Nome completo' },
-      { id: 'telefone', label: 'WhatsApp', tipo: 'tel',   req: true,  ph: '(00) 00000-0000' },
-      { id: 'email',    label: 'E-mail',   tipo: 'email', req: true,  ph: 'voce@email.com' },
-      { id: 'area',     label: 'Área ou vaga de interesse', tipo: 'text', req: true,
+      { id: 'nome',      label: 'Seu nome', tipo: 'text',  req: true,  ph: 'Nome completo' },
+      { id: 'telefone',  label: 'WhatsApp', tipo: 'tel',   req: true,  ph: '(00) 00000-0000' },
+      { id: 'area',      label: 'Área ou vaga de interesse', tipo: 'text', req: true,
         ph: 'Ex.: administrativo, estágio em RH…' },
-      { id: 'resumo',   label: 'Resumo da experiência', tipo: 'textarea', req: false,
-        ph: 'Opcional — em duas ou três linhas.' },
+      { id: 'curriculo', label: 'Currículo (PDF)', tipo: 'file', req: true, accept: '.pdf,application/pdf' },
     ],
   },
 

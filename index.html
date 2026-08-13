@@ -11,7 +11,9 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Xeque-mate Consultoria">
   <meta property="og:description" content="Consultoria empresarial, treinamento e desenvolvimento, recrutamento & seleção.">
-  <meta property="og:image" content="assets/img/logo.png">
+  <meta property="og:image" content="assets/img/capa.jpg">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="900">
 
   <link rel="icon" href="assets/img/logo.png">
 
@@ -24,6 +26,7 @@
   <link rel="stylesheet" href="css/pages.css">
   <link rel="stylesheet" href="css/chat.css">
   <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/secoes.css">
 </head>
 <body>
 
@@ -76,14 +79,6 @@
     <div class="dv"><div class="dl"></div><div class="dt">Nossos serviços</div><div class="dl"></div></div>
     <div class="svc-list" id="svc-list"></div>
 
-    <!-- Folder institucional -->
-    <div class="dv"><div class="dl"></div><div class="dt">Nosso folder</div><div class="dl"></div></div>
-    <figure class="folder" onclick="abrirFolder()">
-      <img src="assets/img/folder.jpg" loading="lazy"
-           alt="Folder da Xeque-mate: desenvolvimento e inovação organizacional para pequenas e médias empresas.">
-      <figcaption class="folder-cap"><span class="folder-zoom">⤢</span> Toque para ampliar</figcaption>
-    </figure>
-
     <!-- Links -->
     <div class="links">
       <a class="lcard" data-href="instagram">
@@ -103,7 +98,30 @@
         <div class="ctxt"><div class="ct">E-mail</div><div class="cs" data-txt="email"></div></div>
         <div class="carr">→</div>
       </a>
+      <div class="lcard" onclick="go('page-secao','carreira')">
+        <div class="cico"><img src="assets/img/arte-carreira.jpg" alt=""></div>
+        <div class="ctxt"><div class="ct">Xeque-mate de Carreira</div><div class="cs">Orientação para o seu próximo passo</div></div>
+        <div class="carr">→</div>
+      </div>
+      <div class="lcard" onclick="go('page-secao','inovacao')">
+        <div class="cico"><img src="assets/img/arte-inovacao.jpg" alt=""></div>
+        <div class="ctxt"><div class="ct">Xeque-mate Inovação</div><div class="cs">Transformação organizacional</div></div>
+        <div class="carr">→</div>
+      </div>
+      <div class="lcard" onclick="go('page-secao','parceiros')">
+        <div class="cico"><img src="assets/img/arte-parceiros.jpg" alt=""></div>
+        <div class="ctxt"><div class="ct">Parceiros</div><div class="cs">Quem caminha com a gente</div></div>
+        <div class="carr">→</div>
+      </div>
     </div>
+
+    <!-- Folder institucional -->
+    <div class="dv"><div class="dl"></div><div class="dt">Nosso folder</div><div class="dl"></div></div>
+    <figure class="folder" onclick="abrirFolder()">
+      <img src="assets/img/folder.jpg" loading="lazy"
+           alt="Folder da Xeque-mate: desenvolvimento e inovação organizacional para pequenas e médias empresas.">
+      <figcaption class="folder-cap"><span class="folder-zoom">⤢</span> Toque para ampliar</figcaption>
+    </figure>
 
     <!-- Rodapé -->
     <div class="foot">
@@ -134,8 +152,10 @@
 ════════════════════════════════════════ -->
 <div class="pg subpg" id="page-chat">
   <div class="sp-head">
-    <button class="back-btn" onclick="back()">←</button>
-    <div class="sp-title"><span class="ai-dot"></span>Xeque</div>
+    <div class="sp-head-in">
+      <button class="back-btn" onclick="back()">←</button>
+      <div class="sp-title"><span class="ai-dot"></span>Xeque</div>
+    </div>
   </div>
   <div class="handoff-bar">
     <div class="handoff-txt">Prefere falar direto com a equipe?</div>
@@ -156,10 +176,26 @@
 ════════════════════════════════════════ -->
 <div class="pg subpg" id="page-form">
   <div class="sp-head">
-    <button class="back-btn" onclick="back()">←</button>
-    <div class="sp-title" id="form-titulo">Solicitar orçamento</div>
+    <div class="sp-head-in">
+      <button class="back-btn" onclick="back()">←</button>
+      <div class="sp-title" id="form-titulo">Solicitar orçamento</div>
+    </div>
   </div>
   <div class="sp-body" id="form-body"></div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     SEÇÕES — carreira, inovação, parceiros
+════════════════════════════════════════ -->
+<div class="pg subpg" id="page-secao">
+  <div class="sp-head">
+    <div class="sp-head-in">
+      <button class="back-btn" onclick="back()">←</button>
+      <div class="sp-title" id="secao-titulo"></div>
+    </div>
+  </div>
+  <div class="sp-body" id="secao-body"></div>
 </div>
 
 
@@ -178,7 +214,9 @@
 <script src="data/site.js"></script>
 <script src="data/servicos.js"></script>
 <script src="data/formularios.js"></script>
+<script src="data/secoes.js"></script>
 <script src="js/form.js"></script>
+<script src="js/secao.js"></script>
 <script src="chatbot/config.js"></script>
 <script src="chatbot/flows.js"></script>
 <script src="chatbot/engine.js"></script>

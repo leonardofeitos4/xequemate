@@ -18,6 +18,10 @@ const SITE = {
 
   cidade:    'João Pessoa · PB',     // AJUSTAR
 
+  // URL do Google Apps Script (App da Web) — ver docs/envio-automatico.md.
+  // Se ficar vazio, os formulários voltam a funcionar só por WhatsApp/e-mail manual.
+  formWebhook: 'https://script.google.com/macros/s/AKfycbywWoSnoejhOwdiPaxFLut101x1qqllCw-oMypDArqtD1EelFtyQ61ttbWakwLPN6xloA/exec',
+
   assistente: {
     nome:      'Xeque',
     monograma: 'X',
@@ -27,7 +31,12 @@ const SITE = {
 
 /* Monta um link de WhatsApp já com a mensagem codificada */
 function waLink(msg) {
-  return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(msg)}`;
+  return waLinkTo(SITE.whatsapp, msg);
+}
+
+/* Mesmo link, mas para outro número (ex.: WhatsApp de um parceiro) */
+function waLinkTo(numero, msg) {
+  return `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
 }
 
 /* Link do Instagram */

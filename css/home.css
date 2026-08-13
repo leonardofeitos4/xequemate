@@ -13,24 +13,25 @@
   display:flex;flex-direction:column;align-items:center;text-align:center;
   gap:5px;padding:26px 0 24px;animation:fadeD .6s ease both;
 }
-.avatar-shell{position:relative;width:96px;height:96px;margin-bottom:16px}
+/* Moldura em arco (topo redondo, base quase reta) — estilo cartão de bio */
+.avatar-shell{position:relative;width:112px;height:138px;margin-bottom:16px}
 .avatar-ring{
-  position:absolute;inset:-7px;border-radius:50%;
+  position:absolute;inset:-7px;border-radius:60px 60px 18px 18px;
   border:1px solid var(--gold-400);
 }
 .avatar-ring::before{
-  content:'';position:absolute;inset:-7px;border-radius:50%;
+  content:'';position:absolute;inset:-7px;border-radius:60px 60px 18px 18px;
   border:1px solid var(--line-soft);
 }
 .avatar-inner{
-  width:100%;height:100%;border-radius:50%;overflow:hidden;
+  width:100%;height:100%;border-radius:56px 56px 14px 14px;overflow:hidden;
   background:#000;border:1px solid var(--line);
   display:flex;align-items:center;justify-content:center;
   box-shadow:var(--shadow-md);
   font-family:var(--ff-display);font-size:34px;font-weight:600;color:var(--gold-400);
 }
 /* A logo é preta sobre branco — invertida fica branca sobre o fundo escuro */
-.avatar-inner img{width:72%;height:auto;object-fit:contain;filter:invert(1)}
+.avatar-inner img{width:60%;height:auto;object-fit:contain;filter:invert(1)}
 .cname{font-family:var(--ff-display);font-size:32px;line-height:1.1;font-weight:600;color:var(--ink)}
 .ctag{
   font-family:var(--ff-mono);font-size:9px;letter-spacing:.24em;
@@ -122,6 +123,7 @@
   background:rgba(255,255,255,.06);border:1px solid var(--line-soft);
 }
 .cico svg{width:21px;height:21px}
+.cico img{width:100%;height:100%;object-fit:cover}
 .cico.mono{font-family:var(--ff-display);font-size:18px;font-weight:600;color:var(--gold-400)}
 .ctxt{flex:1;min-width:0}
 .ct{font-size:15px;font-weight:500;color:var(--ink)}

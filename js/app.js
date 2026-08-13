@@ -51,8 +51,9 @@ function hydrate() {
    2. NAVEGAÇÃO ENTRE PÁGINAS
 ══════════════════════════════ */
 const ROTAS = {
-  'page-chat': 'duvidas',
-  'page-form': 'formulario',   // aceita parâmetro: #formulario/consultoria
+  'page-chat':  'duvidas',
+  'page-form':  'formulario',  // aceita parâmetro: #formulario/consultoria
+  'page-secao': 'secao',       // aceita parâmetro: #secao/carreira
 };
 const POR_SLUG = {};
 Object.entries(ROTAS).forEach(([id, slug]) => { POR_SLUG[slug] = id; });
@@ -70,8 +71,9 @@ function sincronizar() {
   const [slug, param = null] = decodeURIComponent(location.hash.slice(1)).split('/');
   let id = POR_SLUG[slug] || null;
 
-  /* link de formulário quebrado ou inexistente cai na home */
+  /* link de formulário/seção quebrado ou inexistente cai na home */
   if (id === 'page-form' && !FORMULARIOS[param]) id = null;
+  if (id === 'page-secao' && !SECOES[param]) id = null;
   if (id === paginaAtual && param === paramAtual) return;
   paramAtual = param;
 
@@ -95,6 +97,7 @@ function sincronizar() {
 
   if (id === 'page-chat' && !aiStarted) { aiStarted = true; startChat(); }
   if (id === 'page-form') renderFormulario(param);
+  if (id === 'page-secao') renderSecao(param);
 }
 
 addEventListener('hashchange', sincronizar);

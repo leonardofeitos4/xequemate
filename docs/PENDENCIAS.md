@@ -40,10 +40,24 @@ Confirmado: `(84) 99983-6270` → `5584999836270`. Atenção ao digitar, porque
 celular no Brasil tem 9 dígitos depois do DDD (99983-6270, com três noves no
 começo) — sem o nono dígito o link do WhatsApp não abre.
 
-## 5. Foto de capa
+## 5. Foto de capa — resolvido
 
-O site ainda não tem uma foto de capa (só a logo no avatar do topo). Se
-quiserem uma foto da equipe ou do escritório, é só mandar.
+A Xeque-mate mandou a arte (`assets/img/capa.jpg`) e ela já está no
+`og:image`, então o link do site mostra essa capa ao ser compartilhado
+no WhatsApp/Instagram.
+
+## 7. Artes extras (carreira, inovação, parceiros) — aguardando destino
+
+A Xeque-mate mandou 3 artes quadradas no mesmo estilo da capa
+(`assets/img/arte-carreira.jpg`, `arte-inovacao.jpg`, `arte-parceiros.jpg`)
+para virarem 3 novos itens na lista de links: **Parceiros**, **Xeque-mate
+de carreira** e **Xeque-mate Inovação**. As artes são grandes/fotográficas
+demais para o ícone pequeno (42×42px) da lista — combinado usar o mesmo
+estilo dos ícones atuais (emoji), guardando as artes aqui caso sirvam de
+capa para uma página própria de cada um no futuro.
+
+Falta decidir o que cada item abre ao ser tocado (WhatsApp com mensagem
+pronta, link externo, Instagram próprio etc.) — perguntei ao Leonardo.
 
 ## 6. Material de referência
 

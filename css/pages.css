@@ -4,10 +4,14 @@
 
 .sp-head{
   position:sticky;top:0;z-index:15;
-  display:flex;align-items:center;gap:14px;
-  padding:calc(var(--safe-t) + 13px) 22px 13px;
+  padding-top:calc(var(--safe-t) + 13px);
   background:rgba(10,12,16,.88);backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line-soft);
+}
+.sp-head-in{
+  max-width:468px;width:100%;margin:0 auto;
+  display:flex;align-items:center;gap:14px;
+  padding:0 22px 13px;
 }
 .back-btn{
   width:38px;height:38px;flex-shrink:0;border-radius:50%;
