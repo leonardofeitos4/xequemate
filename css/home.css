@@ -13,12 +13,12 @@
   position:relative;z-index:1;overflow:hidden;
   background:#000;animation:fade .6s ease both;
 }
-/* 16/9 é a proporção nativa do arquivo: no celular entra inteira, sem cortar a marca.
-   Acima de 468px ela para de crescer e o fundo desfocado preenche o resto da tela. */
+/* 851/315 é a proporção nativa do arquivo: no celular entra inteira, sem cortar a marca.
+   Passando disso o fundo desfocado preenche o resto da tela. */
 .cover-img{
   position:relative;z-index:1;
-  width:100%;max-width:468px;margin:0 auto;
-  height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center;
+  width:100%;max-width:851px;margin:0 auto;
+  height:auto;aspect-ratio:851/315;object-fit:cover;object-position:center;
 }
 /* preenche as laterais no desktop com a própria capa borrada */
 .cover-bg{
@@ -26,10 +26,9 @@
   object-fit:cover;transform:scale(1.2);
   filter:blur(30px) saturate(.7) brightness(.45);
 }
-/* telas largas: a foto cresce um pouco e as bordas dissolvem no desfoque */
-@media (min-width:520px){
+/* telas mais largas que a capa: as bordas dissolvem no desfoque, sem emenda */
+@media (min-width:940px){
   .cover-img{
-    max-width:clamp(468px,52vw,680px);
     -webkit-mask-image:linear-gradient(to right,transparent 0,#000 10%,#000 90%,transparent 100%);
             mask-image:linear-gradient(to right,transparent 0,#000 10%,#000 90%,transparent 100%);
   }
@@ -46,8 +45,8 @@
   gap:5px;padding:0 0 24px;animation:fadeD .6s ease both;
 }
 /* Moldura em arco (topo redondo, base quase reta) — estilo cartão de bio */
-/* sobe sobre a capa, como cartão de bio */
-.avatar-shell{position:relative;z-index:2;width:112px;height:138px;margin:-58px 0 16px}
+/* sobe sobre a capa, como cartão de bio — menos avanço no celular, onde a capa é baixa */
+.avatar-shell{position:relative;z-index:2;width:112px;height:138px;margin:clamp(-58px,-8vw,-34px) 0 16px}
 .avatar-ring{
   position:absolute;inset:-7px;border-radius:60px 60px 18px 18px;
   border:1px solid var(--gold-400);
